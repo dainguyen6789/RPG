@@ -5,6 +5,7 @@ using UnityStandardAssets.Characters.ThirdPerson;
 [RequireComponent(typeof (ThirdPersonCharacter))]
 public class PlayerMovement : MonoBehaviour
 {
+	[SerializeField]  float walkMoveStopRadius=3.0f;
     ThirdPersonCharacter m_Character;   // A reference to the ThirdPersonCharacter on the object
     CameraRaycaster cameraRaycaster;
     Vector3 currentClickTarget;
@@ -32,7 +33,14 @@ public class PlayerMovement : MonoBehaviour
 				break;
 			}
         }
-		m_Character.Move (3*currentClickTarget - 3*transform.position, false, false);
+		var playerToCLickPoint = currentClickTarget-transform.position;
+
+		if (playerToCLickPoint.magnitude >= walkMoveStopRadius) {
+			m_Character.Move (playerToCLickPoint, false, false);
+		} else 
+		{
+			m_Character.Move (Vector3.zero, false, false);
+		}
 
     }
 }
