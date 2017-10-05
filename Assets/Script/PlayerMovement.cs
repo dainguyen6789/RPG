@@ -40,7 +40,6 @@ public class PlayerMovement : MonoBehaviour
 				break;
 			case Layer.Enemy:
 				currentDestination = ShortDestination (clickPoint, attackStopRadius);
-
 				print ("Not moving to enemy");
 				break;
 			}
@@ -70,8 +69,8 @@ public class PlayerMovement : MonoBehaviour
 		void OnDrawGizmos()
 		{
 			Gizmos.color = Color.black;
-			Gizmos.DrawLine (currentClickTarget, transform.position);
-			Gizmos.DrawSphere (currentClickTarget, 2f);
+			Gizmos.DrawLine (clickPoint, transform.position);
+			Gizmos.DrawSphere (clickPoint, 2f);
 
 		}
 }
