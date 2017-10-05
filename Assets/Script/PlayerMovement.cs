@@ -1,7 +1,10 @@
 using System;
 using UnityEngine;
 using UnityStandardAssets.Characters.ThirdPerson;
+using CameraUI;
 
+namespace Player
+{
 [RequireComponent(typeof (ThirdPersonCharacter))]
 public class PlayerMovement : MonoBehaviour
 {
@@ -44,4 +47,4 @@ public class PlayerMovement : MonoBehaviour
 
     }
 }
-
+}

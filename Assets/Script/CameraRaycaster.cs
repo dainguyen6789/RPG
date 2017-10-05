@@ -1,5 +1,10 @@
 ﻿using UnityEngine;
 
+
+
+namespace CameraUI
+{
+
 public class CameraRaycaster : MonoBehaviour
 {
     public Layer[] layerPriorities = {
@@ -22,9 +27,17 @@ public class CameraRaycaster : MonoBehaviour
         get { return m_layerHit; }
     }
 
+		public delegate void OnLayerChange(Layer newLayer);		// declare new delegate
+	
+	public event OnLayerChange layerChangeObservers;	// instantiate an observer set
+
+
+
     void Start() // TODO Awake?
     {
         viewCamera = Camera.main;
+		//layerChangeObservers += SomeLayerChangeHandler;
+		
     }
 
     void Update()
@@ -36,7 +49,12 @@ public class CameraRaycaster : MonoBehaviour
             if (hit.HasValue)
             {
                 m_hit = hit.Value;
-                m_layerHit = layer;
+					if (layerHit != layer) {
+						m_layerHit = layer;
+						layerChangeObservers (layer);// call all the delegates
+
+					}
+					m_layerHit = layer;
                 return;
             }
         }
@@ -59,4 +77,5 @@ public class CameraRaycaster : MonoBehaviour
         }
         return null;
     }
+}
 }
