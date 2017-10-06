@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityStandardAssets.Characters.ThirdPerson;
 using CameraUI;
 
-namespace Player
+namespace Player_ns
 {
 [RequireComponent(typeof (ThirdPersonCharacter))]
 public class PlayerMovement : MonoBehaviour
@@ -15,7 +15,8 @@ public class PlayerMovement : MonoBehaviour
     ThirdPersonCharacter m_Character;   // A reference to the ThirdPersonCharacter on the object
     CameraRaycaster cameraRaycaster;
     Vector3 currentClickTarget;
-		Vector3 currentDestination,clickPoint;
+	Vector3 currentDestination;
+	Vector3 clickPoint;
         
     private void Start()
     {
