@@ -15,14 +15,14 @@ public class PlayerMovement : MonoBehaviour
     ThirdPersonCharacter m_Character;   // A reference to the ThirdPersonCharacter on the object
     CameraRaycaster cameraRaycaster;
     Vector3 currentClickTarget;
-	Vector3 currentDestination;
+	public Vector3 currentDestination;
 	Vector3 clickPoint;
         
     private void Start()
     {
         cameraRaycaster = Camera.main.GetComponent<CameraRaycaster>();
         m_Character = GetComponent<ThirdPersonCharacter>();
-        currentClickTarget = transform.position;
+        //currentClickTarget = transform.position;
     }
 
     // Fixed update is called in sync with physics
