@@ -57,6 +57,7 @@
      <Compile Include="Assets\Script\PlayerAI.cs" />
      <Compile Include="Assets\Script\PlayerMovement.cs" />
      <Compile Include="Assets\Script\utility.cs" />
+     <None Include="Assets\Wood texture floor_01\readme.txt" />
      <None Include="Assets\Standard Assets\Environment\Water\Water4\Shaders\FXWater4Simple.shader" />
      <None Include="Assets\Standard Assets\Environment\Water (Basic)\Shaders\FXWaterBasic.shader" />
      <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
