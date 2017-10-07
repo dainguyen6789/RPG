@@ -8,8 +8,8 @@ namespace Player_ns
 [RequireComponent(typeof (ThirdPersonCharacter))]
 public class PlayerMovement : MonoBehaviour
 {
-	[SerializeField]  float walkMoveStopRadius=3.0f;
-	[SerializeField] float attackStopRadius=30.0f;
+	[SerializeField]  float walkMoveStopRadius=0.3f;
+	[SerializeField] float attackStopRadius=3.0f;
 
 
     ThirdPersonCharacter m_Character;   // A reference to the ThirdPersonCharacter on the object
