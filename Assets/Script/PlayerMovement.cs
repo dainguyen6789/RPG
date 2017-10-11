@@ -8,7 +8,7 @@ namespace Player_ns
 [RequireComponent(typeof (ThirdPersonCharacter))]
 public class PlayerMovement : MonoBehaviour
 {
-	[SerializeField]  float walkMoveStopRadius=0.3f;
+	[SerializeField]  float walkMoveStopRadius=0.2f;
 	[SerializeField] float attackStopRadius=3.0f;
 
 
@@ -22,7 +22,7 @@ public class PlayerMovement : MonoBehaviour
     {
         cameraRaycaster = Camera.main.GetComponent<CameraRaycaster>();
         m_Character = GetComponent<ThirdPersonCharacter>();
-        //currentClickTarget = transform.position;
+        currentDestination = transform.position;
     }
 
     // Fixed update is called in sync with physics
