@@ -28,7 +28,7 @@ public class PlayerMovement : MonoBehaviour
     // Fixed update is called in sync with physics
     private void FixedUpdate()
     {
-		clickPoint = cameraRaycaster.hit.point;
+			clickPoint = cameraRaycaster.layerHit;
         if (Input.GetMouseButton(0))
         {
 			currentDestination = transform.position;

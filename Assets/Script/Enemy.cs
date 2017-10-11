@@ -11,6 +11,8 @@ public class Enemy : MonoBehaviour {
 	public float currentHealthPoints=100f;
 	GameObject player = null;
 	AICharacterControl aiCharacterControl=null;
+	bool isAttacking=false;
+
 
 
 	[SerializeField] float AttackDistance=10.0f;
@@ -18,7 +20,7 @@ public class Enemy : MonoBehaviour {
 	[SerializeField] float damagePerShot=10.0f;
 	[SerializeField] GameObject projectileToUse;
 	[SerializeField] GameObject projectileSocket;
-
+	[SerializeField] Vector3 aimOffset=new Vector3(0,1.0f,0);
 
 	public float healthAsPercentage
 	{
@@ -36,11 +38,17 @@ public class Enemy : MonoBehaviour {
 	void Update()
 	{
 		float distance = Vector3.Distance (player.transform.position,transform.position);
-		if (distance < AttackDistance) {
+		if (distance < AttackDistance && !isAttacking) {
+			isAttacking=true;
 			aiCharacterControl.SetTarget(player.transform);
-			SpawnProjectile ();
-		} else {
+			//SpawnProjectile ();
+			InvokeRepeating ("SpawnProjectile", 0f, 2f);
+		} 
+		else  
+		{
+			isAttacking=false;
 			aiCharacterControl.SetTarget(transform);
+			CancelInvoke ("SpawnProjectile");
 		}
 	}
 
@@ -53,7 +61,7 @@ public class Enemy : MonoBehaviour {
 		projectileComponent.damageCause = damagePerShot;
 
 		newProjectile.GetComponent<Projectile> ().damageCause = damagePerShot;
-		Vector3 unitvectorToPlayer = (player.transform.position - projectileSocket.transform.position).normalized;
+		Vector3 unitvectorToPlayer = (player.transform.position+aimOffset - projectileSocket.transform.position).normalized;
 		float projectileSpeed = 50;//projectileComponent.projectileSpeed;
 		newProjectile.GetComponent<Rigidbody> ().velocity = unitvectorToPlayer * projectileSpeed;
 	}
