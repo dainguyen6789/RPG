@@ -1,20 +1,18 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj" RefactoringSettings.EnableRefactorings="True">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Standard Assets\Characters\ThirdPersonCharacter\Scripts\AICharacterControl.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Script\PlayerMovement.cs">
     <Files>
+      <File FileName="Assets\Script\Enemy.cs" Line="8" Column="1" />
+      <File FileName="Assets\Script\CursorAffordance.cs" Line="30" Column="35" />
       <File FileName="Assets\Script\CameraRaycaster.cs" Line="1" Column="1" />
-      <File FileName="Assets\Script\CursorAffordance.cs" Line="1" Column="1" />
-      <File FileName="Assets\Script\PlayerMovement.cs" Line="1" Column="1" />
-      <File FileName="Assets\Standard Assets\Characters\ThirdPersonCharacter\Scripts\ThirdPersonCharacter.cs" Line="1" Column="1" />
-      <File FileName="Assets\Script\utility.cs" Line="1" Column="1" />
-      <File FileName="Assets\Enemies\EnemyHealthBar.cs" Line="1" Column="1" />
-      <File FileName="Assets\Enemy.cs" Line="1" Column="1" />
-      <File FileName="Assets\Enemies\EnemyUI.cs" Line="1" Column="1" />
-      <File FileName="Assets\Standard Assets\Characters\ThirdPersonCharacter\Scripts\AICharacterControl.cs" Line="13" Column="1" />
+      <File FileName="Assets\Script\PlayerMovement.cs" Line="56" Column="4" />
+      <File FileName="Assets\Editor\CameraRaycasterEditor.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="C:\Users\pc\Documents\RPG\Assets\Script\CameraRaycaster.cs" line="11" column="1" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>

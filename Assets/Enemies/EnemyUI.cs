@@ -1,14 +1,13 @@
 ﻿using UnityEngine;
 
 // Add a UI Socket transform to your enemy
-// Attack this script to the socket
-// Link to a canvas prefab that contains NPC UI
+// Attach this script to the socket
+// Link to a canvas prefab
 public class EnemyUI : MonoBehaviour {
 
     // Works around Unity 5.5's lack of nested prefabs
     [Tooltip("The UI canvas prefab")]
-    [SerializeField]
-    GameObject enemyCanvasPrefab = null;
+    [SerializeField] GameObject enemyCanvasPrefab = null;
 
     Camera cameraToLookAt;
 
@@ -16,13 +15,12 @@ public class EnemyUI : MonoBehaviour {
     void Start()
     {
         cameraToLookAt = Camera.main;
-       Instantiate(enemyCanvasPrefab, transform.position, Quaternion.identity, transform);
+        Instantiate(enemyCanvasPrefab, transform.position, Quaternion.identity, transform);
     }
 
     // Update is called once per frame 
     void LateUpdate()
     {
-        //transform.LookAt(cameraToLookAt.transform);
-        transform.rotation = Quaternion.LookRotation(cameraToLookAt.transform.forward);
+        transform.LookAt(cameraToLookAt.transform);
     }
 }

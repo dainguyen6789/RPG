@@ -9,15 +9,16 @@ public class CursorAffordance : MonoBehaviour {
 	[SerializeField] Texture2D walkCursor = null;
 	[SerializeField] Texture2D targetCursor = null;
 	[SerializeField] Texture2D unknownCursor = null;
+	[SerializeField] Vector2 cursorHotspot = new Vector2(0f, 0f);
+	CameraRaycaster cameraRaycaster;
 
 	//[SerializeField] Texture2D buttonCursor = null;
 
 	[SerializeField] const int walkableLayerNumber=8;
+
 	[SerializeField] const int enemyLayerNumber=9;
 
-	[SerializeField] Vector2 cursorHotspot = new Vector2(0, 0);
 
-	CameraRaycaster cameraRaycaster;
 
 	// Use this for initialization
 	void Start () {
